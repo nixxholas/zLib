@@ -109,11 +109,11 @@ public enum MojangHead
     }
 
     /**
-     * @return The head as an ItemStack (of type {@link Material#SKULL_ITEM}).
+     * @return The head as an ItemStack (of type {@link Material#LEGACY_SKULL_ITEM}).
      */
     public ItemStack asItem()
     {
-        final ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (short) SkullType.PLAYER.ordinal());
+        final ItemStack item = new ItemStack(Material.LEGACY_SKULL_ITEM, 1, (short) SkullType.PLAYER.ordinal());
         final SkullMeta meta = (SkullMeta) item.getItemMeta();
 
         meta.setOwner(headName);

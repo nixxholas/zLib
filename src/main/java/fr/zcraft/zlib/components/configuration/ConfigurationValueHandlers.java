@@ -504,7 +504,7 @@ public abstract class ConfigurationValueHandlers
     @ConfigurationValueHandler
     static public BannerMeta handleBannerValue(Map map) throws ConfigurationParseException
     {
-        BannerMeta banner = (BannerMeta) new ItemStack(Material.BANNER).getItemMeta();
+        BannerMeta banner = (BannerMeta) new ItemStack(Material.LEGACY_BANNER).getItemMeta();
         DyeColor baseColor = getValue(map, "color", DyeColor.BLACK);
         List patterns = getListValue(map, "patterns", new ArrayList(), Object.class);
         
