@@ -130,7 +130,7 @@ public abstract class NBT
         for (Map.Entry<Enchantment, Integer> enchantment : enchants.entrySet())
         {
             Map<String, Object> enchantmentData = new HashMap<>();
-            enchantmentData.put("id", enchantment.getKey().getId());
+            enchantmentData.put("id", enchantment.getKey());
             enchantmentData.put("lvl", enchantment.getValue());
             enchantList.add(enchantmentData);
         }
