@@ -146,7 +146,7 @@ public final class TextualBanners
      */
     public static ItemStack getBanner(DyeColor color, List<Pattern> patterns)
     {
-        ItemStack banner = new ItemStack(Material.BANNER);
+        ItemStack banner = new ItemStack(Material.LEGACY_BANNER);
         banner.setItemMeta(getBannerMeta(color, patterns));
         return banner;
     }
@@ -161,7 +161,7 @@ public final class TextualBanners
      */
     public static BannerMeta getBannerMeta(DyeColor color, List<Pattern> patterns)
     {
-        BannerMeta meta = (BannerMeta) new ItemStack(Material.BANNER).getItemMeta();
+        BannerMeta meta = (BannerMeta) new ItemStack(Material.LEGACY_BANNER).getItemMeta();
         meta.setBaseColor(color);
         meta.setPatterns(patterns);
         return meta;
@@ -324,7 +324,7 @@ public final class TextualBanners
      */
     public static void editBanner(ItemStack item, Banner banner)
     {
-        if (item.getType() != Material.BANNER)
+        if (item.getType() != Material.LEGACY_BANNER)
             throw new IllegalArgumentException("The specified ItemStack isn't a banner !");
         BannerMeta meta = (BannerMeta) item.getItemMeta();
         banner.setBaseColor(meta.getBaseColor());
