@@ -42,6 +42,7 @@ import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.material.Colorable;
 import org.bukkit.material.MaterialData;
@@ -118,7 +119,7 @@ public class ItemStackBuilder
     private final ItemStack itemStack;
     private Material material = null;
     private int amount = 1;
-    private short data = 0;
+    private int data = 0;
 
     private RawTextPart title = null;
     private final List<String> loreLines = new ArrayList<>();
@@ -215,8 +216,10 @@ public class ItemStackBuilder
 
             newItemStack.setAmount(amount);
         }
-        
-        newItemStack.setDurability(data);
+
+        // https://www.spigotmc.org/threads/itemstack-setdurability-is-deprecated.345933/
+        Damageable durability = (Damageable) newItemStack.getItemMeta();
+        durability.setDamage(data);
 
         if (dye != null)
         {
@@ -629,7 +632,7 @@ public class ItemStackBuilder
      *
      * @return The current ItemStackBuilder instance, for methods chaining.
      */
-    public ItemStackBuilder data(short data)
+    public ItemStackBuilder data(int data)
     {
         this.data = data;
         return this;
