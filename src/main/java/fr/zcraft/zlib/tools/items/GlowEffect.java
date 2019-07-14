@@ -30,6 +30,7 @@
 package fr.zcraft.zlib.tools.items;
 
 import fr.zcraft.zlib.tools.PluginLogger;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.enchantments.EnchantmentWrapper;
@@ -48,9 +49,9 @@ public class GlowEffect extends EnchantmentWrapper
     private final static String ENCHANTMENT_NAME = "GlowEffect";
     private static Enchantment glow;
 
-    protected GlowEffect(int id)
+    protected GlowEffect(String name)
     {
-        super(id);
+        super(name);
     }
 
     /**
@@ -80,13 +81,13 @@ public class GlowEffect extends EnchantmentWrapper
 
         try
         {
-            glow = new GlowEffect(ENCHANTMENT_ID);
+            glow = new GlowEffect(ENCHANTMENT_NAME);
             Enchantment.registerEnchantment(glow);
         }
         catch (IllegalArgumentException e)
         {
             // If the enchantment is already registered - happens on server reload
-            glow = Enchantment.getById(ENCHANTMENT_ID); // getByID required - by name it doesn't work (returns null).
+            glow = Enchantment.getByKey(NamespacedKey.minecraft(ENCHANTMENT_NAME)); // getByID required - by name it doesn't work (returns null).
         }
 
         return glow;
