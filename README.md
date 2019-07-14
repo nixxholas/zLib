@@ -1,5 +1,6 @@
-zLib [![Build Status](https://jenkins.carrade.eu/job/zLib/badge/icon)](https://jenkins.carrade.eu/job/zLib/)
+zLib
 ==========
+Updated for 1.13.2.
 
 Helper library for Bukkit plugins development.
 
@@ -11,7 +12,7 @@ For the `master` branch:
 ### How to use this library in your plugin?
 
 If you are using Maven to build your plugin, follow these simple steps. Other builds methods are not supported (but you can use them of course).  
-Currently, the zLib requires **Java 7** or later and **Bukkit 1.8.3** or later.
+Currently, the zLib requires **Java 8** or later and **Bukkit 1.13.2** or later.
 
 #### I'm starting a new plugin
 
