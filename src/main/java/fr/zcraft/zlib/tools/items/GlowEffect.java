@@ -29,14 +29,15 @@
  */
 package fr.zcraft.zlib.tools.items;
 
-import fr.zcraft.zlib.tools.PluginLogger;
+import java.lang.reflect.Field;
+
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.inventory.ItemStack;
 
-import java.lang.reflect.Field;
+import fr.zcraft.zlib.tools.PluginLogger;
 
 /**
  * A fake enchantment to add a glowing effect on any item.
@@ -45,8 +46,7 @@ import java.lang.reflect.Field;
  */
 public class GlowEffect extends EnchantmentWrapper
 {
-    private final static int ENCHANTMENT_ID = 254;
-    private final static String ENCHANTMENT_NAME = "GlowEffect";
+    private final static String ENCHANTMENT_NAME = "durability";
     private static Enchantment glow;
 
     protected GlowEffect(String name)
